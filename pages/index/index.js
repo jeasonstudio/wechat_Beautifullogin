@@ -100,7 +100,7 @@ Page({
           loadingHidden: true
         })
         wx.navigateTo({
-          url: '../main/main'
+          url: '../zhihu/zhihu'
         })
       }, 1000)
       

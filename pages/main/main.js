@@ -2,22 +2,11 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
     weather: '',
     thisDate: '',
     wind: '',
     tem: '',
     userInfo: {}
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  // 测试函数
-  showContent: function() {
-    console.log("sc");
   },
   onLoad: function () {
     var mainData = this;

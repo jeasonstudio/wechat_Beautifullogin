@@ -1,0 +1,58 @@
+/**index.wxss**/
+.container {
+  opacity: 0.75;
+  background: -webkit-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  /*background: -o-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: -ms-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: linear-gradient(to bottom, #330033 0%,#99CCFF 100%);*/
+  font-family: 微软雅黑!important;
+  overflow: hidden;
+  padding: 0;
+}
+
+.bgImg {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.zhihuUl {
+  overflow-y: auto;
+}
+
+.zhihuLi {
+  position: relative;
+  border-radius: 20rpx;
+  width: 700rpx;
+  height: 200rpx;
+  background-color: #fff;
+  margin: 20rpx 0;
+  text-align: left;
+}
+
+.innerImg {
+  margin: 10rpx 10rpx auto 10rpx;
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 20rpx;
+}
+
+.innerTitle {
+  position: absolute;
+  top: 0;
+  margin: 15rpx;
+  width: 470rpx;
+  font-size: 32rpx;
+  line-height: 1.5;
+}
+
+.innerRM {
+  position: relative;
+  top: -20rpx;
+  padding: 15rpx;
+  font-size: 20rpx;
+  color: #333;
+  text-decoration: underline;
+}

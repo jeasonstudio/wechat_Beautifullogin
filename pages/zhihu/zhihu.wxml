@@ -1,0 +1,12 @@
+<!--main.wxml-->
+<image src="../../images/bg2.png" mode="aspectFill" class="bgImg"></image>
+
+<view class="container">
+  <view class="zhihuUl">
+    <view wx:for="{{zhihuArr}}" class="zhihuLi">
+        <image id="{{index}}" src="{{item.images[0]}}" class="innerImg" mode="aspectFit" binderror="ifImgErr"></image>
+        <text class="innerTitle">{{item.title}}</text>
+        <text class="innerRM">点击阅读全文</text>
+    </view>
+  </view>
+</view>

@@ -1,12 +1,12 @@
 {
   "pages":[
+    "pages/zhihu/zhihu",
     "pages/index/index",
     "pages/main/main",
     "pages/logs/logs"
   ],
   "window":{
     "navigationBarBackgroundColor": "#5E385E",
-    "navigationBarTitleText": "",
     "navigationBarTextStyle":"white"
   },
   "networkTimeout": {
