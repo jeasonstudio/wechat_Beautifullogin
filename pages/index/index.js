@@ -40,6 +40,7 @@ Page({
   // 账号修改
   bindNumInput: function(e) {
     this.setData({
+      numShow: 'none',
       phonenumber: e.detail.value
     })
     console.log(this.data.phonenumber)
@@ -47,12 +48,13 @@ Page({
   // 密码修改
   bindPsdInput: function(e) {
     this.setData({
+      psdShow: 'none',
       password: e.detail.value
     })
     console.log(this.data.password)
   },
   // 账号失去焦点
-  numChange: function(e) {
+  numChange: function() {
     if(this.data.phonenumber == '') {
       this.setData({
         numShow: '',
@@ -63,7 +65,7 @@ Page({
     }
   },
   // 密码失去焦点
-  psdChange: function(e) {
+  psdChange: function() {
     if(this.data.password == '') {
       this.setData({
         numShow: 'none',

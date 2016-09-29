@@ -10,11 +10,11 @@
     <block>
       <icon class="numWaring" style="display: {{numShow}}" type="cancel"></icon>
     </block>
-    <input type="number" bindinput="bindNumInput" bindchange="numChange" placeholder="PhoneNumber" placeholder-class="ph" />
+    <input type="number" bindinput="bindNumInput" bindblur="numChange" placeholder="PhoneNumber" placeholder-class="ph" />
     <block>
       <icon class="psdWaring" style="display: {{psdShow}}" type="cancel"></icon>
     </block>
-    <input type="text" bindinput="bindPsdInput" bindchange="psdChange" placeholder="Password" placeholder-class="ph" password="true"/>
+    <input type="text" bindinput="bindPsdInput" bindblur="psdChange" placeholder="Password" placeholder-class="ph" password="true"/>
   </block>
 
   <button class="loginBtn" bindtap="loginSubmit" plain="true" hover-class="btnHover">Login</button>
