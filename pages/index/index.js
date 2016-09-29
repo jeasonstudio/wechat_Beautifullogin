@@ -37,18 +37,21 @@ Page({
       url: '../logs/logs'
     })
   },
+  // 账号修改
   bindNumInput: function(e) {
     this.setData({
       phonenumber: e.detail.value
     })
     console.log(this.data.phonenumber)
   },
+  // 密码修改
   bindPsdInput: function(e) {
     this.setData({
       password: e.detail.value
     })
     console.log(this.data.password)
   },
+  // 账号失去焦点
   numChange: function(e) {
     if(this.data.phonenumber == '') {
       this.setData({
@@ -59,6 +62,7 @@ Page({
       console.log('手机号不能为空' + this.data.numShow);
     }
   },
+  // 密码失去焦点
   psdChange: function(e) {
     if(this.data.password == '') {
       this.setData({
@@ -69,11 +73,13 @@ Page({
       console.log('密码不能为空' + this.data.psdShow);
     }
   },
+  // 弹窗消失
   modalChange: function() {
     this.setData({
       modalHidden: true
     })
   },
+  // 点击提交按钮
   loginSubmit: function(e) {
     console.log(this)
     if(this.data.phonenumber != '' && this.data.password != '') {
@@ -115,7 +121,12 @@ Page({
       console.log("phonenumber不能为空" + this.data.numShow + "password不能为空" + this.data.psdShow)
     }
   },
+  // 点击找回密码
   RandP: function() {
+    this.setData({
+        modelInnerHtml: '暂不支持注册和密码找回',
+        modalHidden:  false
+      })
     console.log("暂不支持注册和密码找回")
   }
 })

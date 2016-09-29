@@ -88,6 +88,12 @@ input {
 
 }
 
+.newAlert {
+  padding: 15rpx 30rpx;
+  display: block;
+  text-align: center;
+}
+
 .info {
   color: #fff;
   font-size: 25rpx;

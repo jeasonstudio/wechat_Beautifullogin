@@ -26,5 +26,5 @@
 </view>
 
 <modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
-  <view> {{modelInnerHtml}} </view>
+  <view class="newAlert"> {{modelInnerHtml}} </view>
 </modal>
