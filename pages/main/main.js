@@ -1,8 +1,10 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello WeApp',
-    userInfo: {}
+    motto: 'Hello WeApp'
+  },
+  psdChange: function(e) {
+    // 避免出现错误
   },
   onButtonTap: function() {
     wx.navigateTo({
@@ -11,20 +13,5 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
-    var that = this
-  	//登录
-    wx.login({
-      success: function () {
-        wx.getUserInfo({
-          success: function (res) {
-            that.setData({userInfo: res.userInfo})
-            that.update()
-          }
-        })
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    });
   }
 })

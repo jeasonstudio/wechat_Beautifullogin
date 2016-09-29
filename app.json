@@ -1,11 +1,17 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/main/main",
     "pages/logs/logs"
   ],
   "window":{
     "navigationBarBackgroundColor": "#5E385E",
     "navigationBarTitleText": "",
     "navigationBarTextStyle":"white"
-  }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }
