@@ -28,3 +28,7 @@
 <modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
   <view class="newAlert"> {{modelInnerHtml}} </view>
 </modal>
+
+<loading hidden="{{loadingHidden}}" bindchange="loadingChange">
+  加载中...
+</loading>

@@ -9,6 +9,7 @@ Page({
     numShow: 'none',
     psdShow: 'none',
     modelInnerHtml: '123',
+    loadingHidden: true,
     modalHidden: true
   },
   onLoad: function () {
@@ -87,13 +88,22 @@ Page({
     if(this.data.phonenumber != '' && this.data.password != '') {
       this.setData({
         numShow: 'none',
-        psdShow: 'none'
+        psdShow: 'none',
+        loadingHidden: false
       })
 
       console.log("Success");
-      wx.navigateTo({
-        url: '../main/main'
-      })
+
+      var that = this
+      setTimeout(function () {
+        that.setData({
+          loadingHidden: true
+        })
+        wx.navigateTo({
+          url: '../main/main'
+        })
+      }, 1500)
+      
     }else if(this.data.phonenumber == '' && this.data.password != '') {
       this.setData({
         numShow: '',
