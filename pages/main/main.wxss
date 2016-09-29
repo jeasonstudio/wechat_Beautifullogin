@@ -1,24 +1,31 @@
 /**index.wxss**/
 .container {
+  opacity: 0.75;
+  background: -webkit-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: -o-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: -ms-linear-gradient(top, #330033 0%,#CCCCCC 100%);
+  background: linear-gradient(to bottom, #330033 0%,#99CCFF 100%);
+  font-family: 'track'!important;
+}
+
+.bgImg {
+  z-index: -1;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.weatherAll {
+  position: fixed;
+  bottom: 300rpx;
+  line-height: 2;
+  font-family: 微软雅黑;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
 }
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-.userinfo-nickname {
-  color: #aaa;
+
+.weatherDital {
+  font-family: 微软雅黑;
 }

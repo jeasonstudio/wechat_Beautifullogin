@@ -102,7 +102,7 @@ Page({
         wx.navigateTo({
           url: '../main/main'
         })
-      }, 1500)
+      }, 1000)
       
     }else if(this.data.phonenumber == '' && this.data.password != '') {
       this.setData({
