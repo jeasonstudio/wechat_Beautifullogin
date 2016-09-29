@@ -6,9 +6,10 @@ Page({
   data: {
     phonenumber: '',
     password: '',
-    numShow: false,
-    psdShow: false,
-    userInfo: {}
+    numShow: 'none',
+    psdShow: 'none',
+    modelInnerHtml: '123',
+    modalHidden: true
   },
   onLoad: function () {
     // common.sayHello()
@@ -50,35 +51,68 @@ Page({
   },
   numChange: function(e) {
     if(this.data.phonenumber == '') {
-      this.data.numShow = true;
-      this.data.psdShow = false;
+      this.setData({
+        numShow: '',
+        psdShow: 'none'
+      })
+
       console.log('手机号不能为空' + this.data.numShow);
     }
   },
   psdChange: function(e) {
     if(this.data.password == '') {
-      this.data.numShow = false;
-      this.data.psdShow = true;
+      this.setData({
+        numShow: 'none',
+        psdShow: ''
+      })
+
       console.log('密码不能为空' + this.data.psdShow);
     }
+  },
+  modalChange: function() {
+    this.setData({
+      modalHidden: true
+    })
   },
   loginSubmit: function(e) {
     console.log(this)
     if(this.data.phonenumber != '' && this.data.password != '') {
-      this.data.numShow = false;
-      this.data.psdShow = false;
+      this.setData({
+        numShow: 'none',
+        psdShow: 'none'
+      })
+
       console.log("Success");
       wx.navigateTo({
         url: '../main/main'
       })
-    }else if(this.data.phonenumber == '') {
-      this.data.numShow = true;
-      this.data.psdShow = false;
+    }else if(this.data.phonenumber == '' && this.data.password != '') {
+      this.setData({
+        numShow: '',
+        psdShow: 'none',
+        modelInnerHtml: '账号不能为空',
+        modalHidden:  false
+      })
+
       console.log("phonenumber不能为空" + this.data.numShow)
-    }else if(this.data.password == '') {
-      this.data.numShow = false;
-      this.data.psdShow = true;
+    }else if(this.data.password == '' && this.data.phonenumber != '') {
+      this.setData({
+        numShow: 'none',
+        psdShow: '',
+        modelInnerHtml: '密码不能为空',
+        modalHidden:  false
+      })
+
       console.log("password不能为空" + this.data.psdShow)
+    }else {
+      this.setData({
+        numShow: '',
+        psdShow: '',
+        modelInnerHtml: '账号密码不能为空',
+        modalHidden:  false
+      })
+
+      console.log("phonenumber不能为空" + this.data.numShow + "password不能为空" + this.data.psdShow)
     }
   },
   RandP: function() {

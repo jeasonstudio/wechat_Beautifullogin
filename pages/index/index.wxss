@@ -61,6 +61,19 @@ input {
   top: 715rpx;
 }
 
+.num-true {
+  display: inherit;
+}
+.num-false {
+  display: none;
+}
+.psd-true {
+  display: inherit;
+}
+.psd-false {
+  display: none;
+}
+
 .loginBtn {
   width: 68%;
   height: 90rpx;

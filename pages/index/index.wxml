@@ -7,12 +7,12 @@
   <view class="whiteLine"></view>
 
   <block>
-    <block wx:if="{{numShow}}">
-      <icon type="cancel" class="numWaring"></icon>
+    <block>
+      <icon class="numWaring" style="display: {{numShow}}" type="cancel"></icon>
     </block>
     <input type="number" bindinput="bindNumInput" bindchange="numChange" placeholder="PhoneNumber" placeholder-class="ph" />
-    <block wx:if="{{psdShow}}">
-      <icon type="cancel" class="psdWaring"></icon>
+    <block>
+      <icon class="psdWaring" style="display: {{psdShow}}" type="cancel"></icon>
     </block>
     <input type="text" bindinput="bindPsdInput" bindchange="psdChange" placeholder="Password" placeholder-class="ph" password="true"/>
   </block>
@@ -24,3 +24,7 @@
   <view class="footer">Copyright © 2016 JeasonStudio</view>
 
 </view>
+
+<modal title="提示" hidden="{{modalHidden}}" no-cancel bindconfirm="modalChange">
+  <view> {{modelInnerHtml}} </view>
+</modal>
