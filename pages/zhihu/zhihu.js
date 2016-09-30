@@ -5,6 +5,7 @@ Page({
     zhihuData: {},
     zhihuArr: [],
     newestDate: '',
+    loadingHidden: true,
     errImg: '../../images/nogo.jpg'
   },
   // 图片404触发事件
@@ -28,6 +29,9 @@ Page({
   },
   // 上拉继续加载
   continueLoad: function() {
+    this.setData({
+      loadingHidden: false
+    })
     var that = this
     var checkDate = this.data.newestDate
     var oldArr = this.data.zhihuArr
@@ -41,7 +45,8 @@ Page({
           var newArr = oldArr.concat(res.data.stories);
           console.log(newArr)
           that.setData({
-            zhihuArr: newArr
+            zhihuArr: newArr,
+            loadingHidden: true
           })
         }else {
           // 错误提示
