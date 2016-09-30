@@ -85,7 +85,8 @@ Page({
       data: {},
       success: function(res) {
         if(res.errMsg == "request:ok") {
-          console.log(res.data.body)
+          // var ttt = htmlToStr.htmlToStr("<html>ssdasasdasdasdasdasd</html>")
+          // console.log(ttt)
         }else {
           // 错误提示
         }
@@ -113,3 +114,27 @@ Page({
     })
   }
 })
+
+var htmlToStr = require('../../utils/htmltostr.js');
+
+// var htmlToStr = function(hStr) {
+//   var rootArr = hStr.split('');
+//   var finalArr = [],j = 0;
+//   for(var i = 0 ; i < rootArr.length ; i ++ ) {
+//     if(rootArr[i] == '<') {
+      
+//       while(1){
+//         if(rootArr[j] == '>') {
+//           break;
+//         }else {
+//           j++;
+//         }
+//       }
+//     }else {
+//       finalArr[j] = rootArr[i];
+//       j++;
+//     }
+//   }
+
+//   return finalArr.join('');
+// }
