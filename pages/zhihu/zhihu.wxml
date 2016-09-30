@@ -2,11 +2,11 @@
 <image src="../../images/bg2.png" mode="aspectFill" class="bgImg"></image>
 
 <view class="container">
-  <view class="zhihuUl">
+  <scroll-view scroll-y="true" scroll-x="false" class="zhihuUl" bindscrolltolower="continueLoad" bindscrolltoupper="refreshLoad">
     <view wx:for="{{zhihuArr}}" class="zhihuLi" data-id="{{item.id}}" bindtap="turnToDetailPage">
         <image id="{{index}}" src="{{item.images[0]}}" class="innerImg" mode="aspectFit" binderror="ifImgErr"></image>
         <text class="innerTitle">{{item.title}}</text>
         <text class="innerRM">点击阅读全文</text>
     </view>
-  </view>
+  </scroll-view>
 </view>
