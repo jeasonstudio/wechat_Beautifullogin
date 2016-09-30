@@ -25,7 +25,28 @@ Page({
   },
   // 下拉刷新
   refreshLoad: function() {
-     console.log("触发下拉刷新")
+    console.log("触发下拉刷新")
+    var that = this
+    this.setData({
+      loadingHidden: false
+    })
+    wx.request({
+      url: 'http://news-at.zhihu.com/api/4/news/latest',
+      data: {},
+      success: function(res) {
+        console.log(res)
+        if(res.errMsg == "request:ok") {
+          that.setData({
+            zhihuData: res.data,
+            zhihuArr: res.data.stories,
+            newestDate: res.data.date,
+            loadingHidden: true
+          })
+        }else {
+          // 错误提示
+        }
+      }
+    })
   },
   // 上拉继续加载
   continueLoad: function() {
@@ -64,7 +85,7 @@ Page({
       data: {},
       success: function(res) {
         if(res.errMsg == "request:ok") {
-          console.log(res)
+          console.log(res.data.body)
         }else {
           // 错误提示
         }
