@@ -11,6 +11,22 @@ Page({
     var i = e.currentTarget.id;
     console.log(i)
   },
+  turnToDetailPage: function(e) {
+    var newId = e.currentTarget.dataset.id
+
+    console.log(newId)
+    wx.request({
+      url: 'http://news-at.zhihu.com/api/4/news/' + newId,
+      data: {},
+      success: function(res) {
+        if(res.errMsg == "request:ok") {
+          console.log(res)
+        }else {
+          // 错误提示
+        }
+      }
+    })
+  },
   onLoad: function () {
     var that = this
     wx.request({
@@ -19,7 +35,6 @@ Page({
       success: function(res) {
         console.log(res)
         if(res.errMsg == "request:ok") {
-          console.log('sss')
           that.setData({
             zhihuData: res.data,
             zhihuArr: res.data.stories
