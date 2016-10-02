@@ -85,6 +85,8 @@ Page({
       data: {},
       success: function(res) {
         if(res.errMsg == "request:ok") {
+          console.log(htmlToStr.coder("<html>ssdasasdasdasdasdasd</html>"))
+          
           // var ttt = htmlToStr.htmlToStr("<html>ssdasasdasdasdasdasd</html>")
           // console.log(ttt)
         }else {
